@@ -1,0 +1,67 @@
+/* Cyberpunk Input Section Styles */
+.input-section {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.input-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px 16px 0 0;
+}
+
+.input-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.tab-content {
+  animation: fadeInUp 0.4s ease-out;
+  min-height: 400px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .input-section {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 15px;
+  }
+  
+  .input-container {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .input-section {
+    padding: 1rem;
+    margin: 0 -0.5rem 1.5rem;
+    border-radius: 10px;
+  }
+}

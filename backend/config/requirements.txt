@@ -1,0 +1,28 @@
+fastapi
+uvicorn[standard]
+python-multipart
+torch
+transformers
+datasets
+accelerate
+
+# Audio processing
+librosa
+soundfile
+
+# Image processing
+opencv-python
+Pillow
+
+# Data processing
+pandas
+numpy
+
+# Utilities
+tqdm
+requests
+
+# Optional: For better performance
+# torch-audio>=0.9.0  # Uncomment if you want torch audio support
+# torchvision>=0.10.0  # Uncomment if you want torch vision support
+

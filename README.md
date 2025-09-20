@@ -1,70 +1,145 @@
-# Getting Started with Create React App
+<h1>🎬 OTT Recommendation Tool</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>
+A modern full-stack recommendation system that detects user emotions (via text or facial expressions) using Hugging Face models and provides 
+<strong>personalized movie/TV show recommendations</strong> based on mood.
+</p>
 
-## Available Scripts
+<h2>🏗️ Architecture</h2>
 
-In the project directory, you can run:
+<p>OTT Recommendation Tool is built with a modern three-tier architecture:</p>
+<ul>
+  <li><strong>Frontend:</strong> React.js with Vanilla CSS</li>
+  <li><strong>Backend API:</strong> FastAPI with Python, Hugging Face Transformers, PyTorch, OpenCV, Pillow, Uvicorn</li>
+  <li><strong>Database / Storage:</strong> (Optional) PostgreSQL or local storage for user preferences & caching <em>(not included in this version)</em></li>
+</ul>
 
-### `npm start`
+<h2>🚀 Features</h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h3>Core Features</h3>
+<ul>
+  <li><strong>Text Emotion Analysis:</strong> Detects emotions using <code>j-hartmann/emotion-english-distilroberta-base</code></li>
+  <li><strong>Face Emotion Analysis:</strong> Facial expression recognition using <code>trpakov/vit-face-expression</code></li>
+  <li><strong>Movie Database:</strong> 28,655+ movies from Hugging Face <code>mt0rm0/movie_descriptors_small</code> dataset</li>
+  <li><strong>Unified Recommendation Engine:</strong> Combines multiple detection methods for higher accuracy</li>
+  <li><strong>Real-Time Recommendations:</strong> Instant suggestions tailored to detected emotions</li>
+</ul>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h3>AI Features</h3>
+<ul>
+  <li><strong>Emotion-to-Genre Mapping:</strong> Maps mood to preferred movie genres</li>
+  <li><strong>Rating-Based Filtering:</strong> Only movies with ≥ 7.0 rating are recommended</li>
+  <li><strong>Recency Preference:</strong> Gives slight priority to recent releases</li>
+  <li><strong>Fast Inference:</strong> ~1–3 seconds per request</li>
+</ul>
 
-### `npm test`
+<h2>📁 Project Structure</h2>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<pre>
+ott-recommendation-tool/
+├── frontend/                 # React.js frontend application
+│   ├── src/
+│   │   ├── components/      # Reusable UI components
+│   │   ├── pages/           # Main application pages
+│   │   ├── styles/          # CSS stylesheets
+│   │   └── App.js           # Main entry point
+│   └── package.json         # Frontend dependencies
+│
+├── backend/                  # FastAPI backend
+│   ├── api/                  # API routes
+│   ├── models/               # Model loading & management
+│   ├── services/             # Business logic for recommendations
+│   ├── app.py                # FastAPI entry point
+│   └── requirements_hf.txt   # Python dependencies
+│
+└── README.md                 # Documentation
+</pre>
 
-### `npm run build`
+<h2>🛠️ Technology Stack</h2>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h3>Frontend</h3>
+<ul>
+  <li><strong>React.js 19:</strong> Modern React with functional components</li>
+  <li><strong>CSS3:</strong> Responsive styling with flexbox/grid</li>
+  <li><strong>Axios / Fetch API:</strong> Communication with backend</li>
+</ul>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<h3>Backend API</h3>
+<ul>
+  <li><strong>FastAPI:</strong> High-performance Python web framework</li>
+  <li><strong>Hugging Face Transformers:</strong> Pre-trained NLP & vision models</li>
+  <li><strong>PyTorch:</strong> Deep learning framework</li>
+  <li><strong>OpenCV + Pillow:</strong> Image preprocessing & facial detection</li>
+  <li><strong>Uvicorn:</strong> ASGI server for async requests</li>
+</ul>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h3>Database / Storage (Optional)</h3>
+<ul>
+  <li><strong>PostgreSQL:</strong> Persistent storage for preferences/history <em>(not included)</em></li>
+  <li><strong>Local Caching:</strong> Hugging Face datasets & models cached for speed</li>
+</ul>
 
-### `npm run eject`
+<h2>📋 Prerequisites</h2>
+<ul>
+  <li><strong>Node.js</strong> (v16 or higher)</li>
+  <li><strong>Python</strong> (v3.8 or higher)</li>
+  <li><strong>Git</strong> (for cloning the repo)</li>
+  <li><em>(Optional)</em> <strong>PostgreSQL</strong> for persistent storage</li>
+</ul>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<h2>🔧 Installation & Setup</h2>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<h3>1. Clone the Repository</h3>
+<pre>
+git clone https://github.com/SakshamTalwar12/OTT-Recommendation-Tool.git
+cd OTT-Recommendation-Tool
+</pre>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<h3>2. Install Backend Dependencies</h3>
+<pre>
+cd backend
+pip install -r requirements_hf.txt
+</pre>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<h3>3. Start the Backend Server</h3>
+<pre>
+uvicorn app:app --reload
+</pre>
+<p>Backend will run at <code>http://127.0.0.1:8000</code></p>
 
-## Learn More
+<h3>4. Install Frontend Dependencies</h3>
+<pre>
+cd ../frontend
+npm install
+</pre>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<h3>5. Start the Frontend</h3>
+<pre>
+npm start
+</pre>
+<p>Frontend will run at <code>http://localhost:3000</code></p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h2>⚡ Usage</h2>
+<ul>
+  <li>Open the web app at <code>http://localhost:3000</code></li>
+  <li>Choose <strong>Text Input</strong> or <strong>Face Emotion Detection</strong></li>
+  <li>Submit input & receive instant movie/TV recommendations</li>
+</ul>
 
-### Code Splitting
+<h2>🔮 Future Improvements</h2>
+<ul>
+  <li>🎥 Add trailers and OTT platform links</li>
+  <li>⭐ Personalized recommendations based on user history</li>
+  <li>📊 Analytics dashboard for emotion trends</li>
+  <li>📱 Deploy mobile-friendly UI</li>
+</ul>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<h2>🤝 Contributing</h2>
+<p>
+Contributions are welcome! Please fork the repo and submit a pull request.
+</p>
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h2>📜 License</h2>
+<p>
+This project is licensed under the <strong>MIT License</strong>.
+</p>
