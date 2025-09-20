@@ -1,4 +1,4 @@
-<h1>🎬 MoodMate</h1>
+<h1>🎬 Mood-Mate</h1>
 
 <p>
 A modern full-stack recommendation system that detects user emotions (via text or facial expressions) using Hugging Face models and provides 
