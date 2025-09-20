@@ -1,7 +1,7 @@
 <h1>🎬 Mood-Mate</h1>
 
 <p>
-A modern full-stack recommendation system that detects user emotions (via text or facial expressions) using Hugging Face models and provides 
+A modern full-stack OTT-recommendation system that detects user emotions (via text or facial expressions) using Hugging Face models and provides 
 <strong>personalized movie/TV show recommendations</strong> based on mood.
 </p>
 
