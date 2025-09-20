@@ -36,7 +36,7 @@ A modern full-stack OTT-recommendation system that detects user emotions (via te
 <h2>📁 Project Structure</h2>
 
 <pre>
-ott-recommendation-tool/
+moodmate/
 ├── frontend/                 # React.js frontend application
 │   ├── src/
 │   │   ├── components/      # Reusable UI components
@@ -91,8 +91,8 @@ ott-recommendation-tool/
 
 <h3>1. Clone the Repository</h3>
 <pre>
-git clone https://github.com/SakshamTalwar12/OTT-Recommendation-Tool.git
-cd OTT-Recommendation-Tool
+git clone https://github.com/SakshamTalwar12/MoodMate.git
+cd MoodMate
 </pre>
 
 <h3>2. Install Backend Dependencies</h3>
@@ -128,10 +128,8 @@ npm start
 
 <h2>🔮 Future Improvements</h2>
 <ul>
-  <li>🎥 Add trailers and OTT platform links</li>
   <li>⭐ Personalized recommendations based on user history</li>
   <li>📊 Analytics dashboard for emotion trends</li>
-  <li>📱 Deploy mobile-friendly UI</li>
 </ul>
 
 <h2>🤝 Contributing</h2>
